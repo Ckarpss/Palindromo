@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
+    <title>É palindromo ou não?</title>
+    <style>body{display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aqua;}
+    #caixa{text-align: center;
+        background-color: aquamarine;
+        padding: 20px;
+        border-radius: 10px;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="a.png" alt="zoio">
+        <br>
+        <b href="Explicação">Algumas palavras tem o mesmo significado ao inverter-las.</b>
+        <br>
+        <br>
+        <input type="text" id="entrada" placeholder="Digite uma palavra">
+        <button onclick="invertido()">Exibir Inversão</button>        
+        <p id="resultado"></p>
+    </div>
+    <script>
+    function invertido() {
+        const entrada = document.getElementById("entrada").value;
+        const invertido = entrada.split("").reverse().join("");
+        document.getElementById("resultado").textContent = invertido;
+        const ehPalindromo = entrada.toLowerCase() === invertido.toLowerCase();
+        if (ehPalindromo) {
+            document.getElementById("resultado").style.color = "green";
+            document.getElementById("resultado").textContent += " (É um palíndromo!)";
+        } else {document.getElementById("resultado").style.color = "red";}}
+</script>
+</body>
+</html>
